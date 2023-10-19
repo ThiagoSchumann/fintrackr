@@ -1,36 +1,11 @@
-# FinTrackr :dollar:
+# FinTrackr Docs
 
-![FinTrackr Logo](URL_DO_LOGO) *(Substitua "URL_DO_LOGO" pela URL do logo do FinTrackr, se houver)*
+Este repositório contém a documentação e artefatos centrais para o projeto FinTrackr. O FinTrackr é uma solução integrada projetada para facilitar o rastreamento e a gestão de finanças pessoais, subdividida em múltiplas subaplicações.
 
-## Descrição
+## Estrutura do Repositório
 
-FinTrackr é um aplicativo web responsivo destinado à gestão de despesas pessoais. Ele permite aos usuários controlar e analisar suas finanças de forma simplificada e eficaz.
+Aqui está uma visão geral da estrutura do repositório:
 
-## Funcionalidades Principais
-
-- Registro e categorização de transações financeiras.
-- Importação de faturas de cartão de crédito (Banco Bradesco como banco piloto).
-- Geração de relatórios financeiros visuais.
-- Criação e monitoramento de orçamentos.
-- Interface responsiva para diferentes dispositivos.
-
-## Documentação
-
-TO-DO
-
-## Iniciando
-
-TO-DO
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENCE).
-
-## Contato
-
-Para dúvidas, sugestões ou feedback:
-- Thiago Schumann: [thiagoarturschumann@gmail.com](mailto:thiagoarturschumann@gmail.com)
-- Dênis Diego Marx: [ddiegomarx@gmail.com](mailto:ddiegomarx@gmail.com)
-
-Ou abra uma issue.
-
+- **adrs**: Esta pasta contém os Documentos de Decisão de Arquitetura (ADRs) para o projeto. ADRs são documentos curtos que explicam as razões por trás de decisões arquiteturais específicas.
+- **diagrams**: Todos os diagramas relacionados ao projeto, como diagramas de fluxo de trabalho, diagramas de entidade-relacionamento e outros, podem ser encontrados aqui.
+- **specifications**: Esta seção contém especificações detalhadas do projeto, incluindo requisitos, histórias de usuário e outros detalhes relacionados ao design e funcionalidade do sistema.

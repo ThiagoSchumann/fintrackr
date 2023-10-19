@@ -1,0 +1,68 @@
+@startuml ERDiagram
+
+entity "User" as user {
+  +id: int
+  username: String
+  password: String
+  email: String
+}
+
+entity "Transaction" as transaction {
+  +id: int
+  amount: float
+  description: String
+  date: Date
+}
+
+entity "Category" as category {
+  +id: int
+  name: String
+}
+
+entity "CreditCard" as creditcard {
+  +id: int
+  name: String
+  limit: float
+}
+
+entity "Invoice" as invoice {
+  +id: int
+  amount: float
+  dueDate: Date
+}
+
+entity "Budget" as budget {
+  +id: int
+  month: int
+  year: int
+}
+
+entity "BudgetDetail" as budgetdetail {
+  +id: int
+  amount: float
+}
+
+entity "Account" as account {
+  +id: int
+  name: String
+  balance: float
+}
+
+entity "BalanceHistory" as balancehistory {
+  +id: int
+  date: Date
+  amount: float
+  description: String
+}
+
+user -- transaction : has >
+transaction -- category : has >
+transaction -- account : belongs to >
+user -- creditcard : has >
+creditcard -- invoice : has >
+invoice -- transaction : contains >
+user -- budget : has >
+budget -- budgetdetail : consists of >
+budgetdetail -- category : for >
+transaction -- balancehistory : causes >
+@enduml
