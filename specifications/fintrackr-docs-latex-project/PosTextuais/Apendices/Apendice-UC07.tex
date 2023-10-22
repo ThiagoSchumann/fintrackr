@@ -1,0 +1,84 @@
+% ----------------------------------------------------------
+\chapter{UC07 - Importar Faturas}
+% ----------------------------------------------------------
+\label{apendiceUC07}
+
+\subsection*{Identificador}
+\textit{UC07}
+
+\subsection*{Título}
+Importar Faturas
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Microserviço de Importação
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário possui uma fatura no formato .csv para importar.
+		\item O usuário está autenticado e tem permissão para importar faturas.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário navega até a seção de importação de faturas.
+		\item O usuário seleciona e carrega o arquivo .csv da fatura desejada.
+		\item O sistema valida o formato e conteúdo do arquivo.
+		\item O microserviço de importação processa o arquivo e extrai as transações.
+		\item As transações são registradas no sistema associadas à conta ou cartão do usuário.
+		\item O usuário é informado de que a importação foi bem-sucedida.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Edição Pós-Importação}:
+		      \begin{enumerate}
+			      \item Após a importação bem-sucedida, o usuário opta por revisar as transações importadas.
+			      \item O sistema apresenta uma lista das transações importadas.
+			      \item O usuário edita ou exclui transações conforme necessário.
+			      \item O sistema salva as alterações feitas pelo usuário.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Arquivo Inválido}:
+		      \begin{enumerate}
+			      \item O sistema detecta que o arquivo .csv carregado é inválido ou corrompido.
+			      \item O sistema informa ao usuário sobre o problema com o arquivo e solicita um novo arquivo.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item As transações da fatura são registradas no sistema e podem ser visualizadas e gerenciadas pelo usuário.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN07: Despesas em cartões de crédito devem ser associadas à fatura corrente.
+		\item RN10: Importações de faturas via .csv devem permitir edição pós-importação.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A funcionalidade de importação deve suportar faturas de diferentes bancos, iniciando pelo Bradesco.
+	\end{itemize}
+\end{addmargin}

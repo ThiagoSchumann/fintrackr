@@ -1,0 +1,84 @@
+\chapter{Definição da Arquitetura}
+
+\noindent
+\textbf{Architecture Decision Record (ADR)}
+
+As ADRs (Documentos de Decisão de Arquitetura) implementadas neste projeto foram desenvolvidas seguindo o modelo proposto por Michael Nygard, disponível no \href{https://github.com/joelparkerhenderson/architecture-decision-record/blob/main/locales/en/templates/decision-record-template-by-michael-nygard/index.md}{GitHub}. Este modelo fornece uma estrutura clara e concisa para documentar decisões arquiteturais cruciais, garantindo consistência e compreensibilidade em todo o projeto.
+
+
+\subsection{Estilo de Arquitetura}
+
+\subsubsection*{ADR-001 - Tentativa de Implementar Todo o Projeto do \textit{Fintrackr} Usando Microserviços}
+Apêndice \ref{apendiceADR001}
+
+\subsubsection*{ADR-002 - Adoção de Arquitetura Monolítica para a Lógica de Negócios Principal do \textit{Fintrackr}}
+Apêndice \ref{apendiceADR002}
+
+\subsubsection*{ADR-003 - Criação de Microserviço Especializado para Processamento de Planilhas no \textit{Fintrackr}}
+Apêndice \ref{apendiceADR003}
+
+\subsubsection*{ADR-004 - Adoção de Arquitetura Monolítica no Front-end do \textit{Fintrackr}}
+Apêndice \ref{apendiceADR004}
+
+
+\subsection{Padrões Arquiteturais}
+
+\subsubsection*{ADR-005 - Front-end React - Component-Based Architecture}
+Apêndice \ref{apendiceADR005}
+
+\subsubsection*{ADR-006 - Back-end Flask - Camadas com Clean/Onion}
+Apêndice \ref{apendiceADR006}
+
+\subsubsection*{ADR-007 - Microserviço com Pandas - Hexagonal}
+Apêndice \ref{apendiceADR007}
+
+\subsection{SOLID}
+
+\subsubsection*{S - Single Responsibility Principle (Princípio da Responsabilidade Única)}
+Sugere que uma classe ou módulo deve ter apenas uma razão para mudar, ou seja, deve ter apenas uma responsabilidade. Isso facilita a manutenção, testabilidade e compreensão do código. Dentro da arquitetura em camadas e do modelo Clean/Onion, é vital que cada camada ou serviço do FinTrackr tenha uma responsabilidade clara. Por exemplo, no contexto de um monólito, a camada de acesso a dados deve focar estritamente na persistência e recuperação de dados, enquanto a lógica de negócios reside em uma camada separada, desacoplada de detalhes específicos de banco de dados ou da apresentação.
+
+\subsubsection*{O - Open/Closed Principle (Princípio do Aberto/Fechado)}
+Propõe que entidades de software (como classes ou módulos) devem estar abertas para extensão, mas fechadas para modificação. Isso permite que novas funcionalidades sejam adicionadas sem alterar o código existente. Na arquitetura Clean/Onion, a lógica central do FinTrackr deve ser projetada de forma que novas funcionalidades ou regras de negócios possam ser adicionadas sem alterar o núcleo existente. Isso é especialmente útil em um ambiente de microserviços, onde novos serviços podem ser introduzidos sem perturbar os já existentes.
+
+\subsubsection*{L - Liskov Substitution Principle (Princípio da Substituição de Liskov)}
+Estabelece que subtipos devem ser substituíveis por seus tipos-base sem alterar a correção do programa. Independentemente da arquitetura adotada, seja monolítica ou baseada em microserviços, é crucial garantir que qualquer extensão ou modificação de entidades respeite este princípio. Por exemplo, se o FinTrackr introduzir uma nova variação de uma conta, qualquer instância dessa variação deve ser tratável como uma "conta" no sistema.
+
+\subsubsection*{I - Interface Segregation Principle (Princípio da Segregação de Interfaces)}
+Sugere que nenhuma classe deve ser forçada a implementar interfaces das quais não precisa. Na arquitetura Clean/Onion, isso se traduz em criar contratos claros e específicos entre as camadas, garantindo que a lógica de negócios se comunique apenas com as operações de que realmente precisa. Em uma abordagem de microserviços, cada serviço deve expor apenas as operações relevantes para seu domínio.
+
+\subsubsection*{D - Dependency Inversion Principle (Princípio da Inversão de Dependência)}
+Propõe que módulos de alto nível não devem depender de módulos de baixo nível, mas ambos devem depender de abstrações. Na arquitetura Clean/Onion, a lógica de negócios no núcleo não deve depender diretamente de detalhes externos, como bancos de dados ou APIs. Isso se alinha bem com o uso de ORMs, que fornecem uma abstração sobre o banco de dados. Em uma abordagem de microserviços, os serviços devem comunicar-se por meio de contratos bem definidos.
+
+
+
+\subsection{Design Patterns}
+
+\subsection*{Padrão Observer para a camada Transação}
+
+\subsubsection*{Funcionamento}
+O padrão Observer é um padrão comportamental que define uma dependência entre objetos de modo que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. O padrão é composto por um \textit{Subject} que mantém uma lista de seus dependentes, chamados \textit{Observers}, e os notifica sobre quaisquer mudanças de estado.
+
+\subsubsection*{Aplicação ao FinTrackr}
+No contexto do FinTrackr, o módulo "Transação" atua como o \textit{Subject}. Sua responsabilidade é notificar os usuários sobre transações que vencem no dia atual. Os módulos "Notificações por E-mail", "Notificações Push" e "Alertas no Dashboard" atuam como \textit{Observers}. Diariamente, o sistema verifica todas as transações com vencimento no dia atual e, para cada transação identificada, o módulo "Transação" notifica todos os observadores registrados.
+
+\subsection*{Padrão Strategy para Importação de Faturas}
+
+\subsubsection*{Funcionamento}
+O padrão Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. Esse padrão permite que o algoritmo varie independentemente dos clientes que o utilizam, promovendo uma separação entre a definição de estratégias e sua execução no contexto.
+
+\subsubsection*{Aplicação ao FinTrackr}
+No microserviço de "Importação de Faturas" do FinTrackr, o padrão Strategy é implementado por meio de uma interface chamada \textit{ImportStrategy}. Essa interface define um contrato comum para todos os algoritmos de importação. Implementações concretas, como \textit{BradescoImportStrategy}, definem algoritmos específicos para diferentes bancos. Quando uma requisição de importação é recebida, o microserviço determina qual estratégia usar e processa a importação conforme definido por essa estratégia.
+
+\subsection{Padrões de comunicação}
+
+\subsubsection*{ADR-008 - Adoção da Arquitetura REST para Comunicação entre Front-end e Back-end Flask}
+
+Apêndice \ref{apendiceADR008}
+
+\subsubsection*{ADR-009 - Adoção da Arquitetura REST para Comunicação entre Microserviços}
+
+Apêndice \ref{apendiceADR009}
+
+\subsubsection*{ADR-010 - Adoção do SQLAlchemy para Comunicação com o Banco de Dados no Flask}  
+
+Apêndice \ref{apendiceADR010}

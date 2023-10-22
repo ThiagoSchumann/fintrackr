@@ -1,0 +1,92 @@
+% ----------------------------------------------------------
+\chapter{UC04 - Gerenciar Categorias}
+% ----------------------------------------------------------
+\label{apendiceUC04}
+
+\subsection*{Identificador}
+\textit{UC04}
+% Conteúdo do Apêndice UC04
+
+\subsection*{Título}
+Gerenciar Categorias
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Gerenciamento de Categorias
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado no sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a seção de gerenciamento de categorias.
+		\item O sistema apresenta a lista de categorias existentes.
+		\item O usuário seleciona uma ação: criar nova categoria, editar categoria existente ou excluir categoria.
+		\item O sistema executa a ação desejada e fornece feedback ao usuário.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Criação de Nova Categoria}:
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção para criar uma nova categoria.
+			      \item O sistema apresenta um formulário para inserção dos detalhes da categoria (nome, cor, ícone).
+			      \item O usuário preenche os detalhes e submete o formulário.
+			      \item O sistema valida as informações e cria a nova categoria.
+		      \end{enumerate}
+
+		\item \textbf{Edição de Categoria Existente}:
+		      \begin{enumerate}
+			      \item O usuário seleciona uma categoria da lista.
+			      \item O sistema apresenta o formulário preenchido com os detalhes da categoria selecionada.
+			      \item O usuário altera as informações desejadas e submete o formulário.
+			      \item O sistema valida as alterações e atualiza a categoria.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Exclusão de Categoria Associada a Transações}:
+		      \begin{enumerate}
+			      \item O usuário tenta excluir uma categoria que possui transações associadas.
+			      \item O sistema detecta a associação e informa ao usuário que a categoria não pode ser excluída.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item As categorias são atualizadas conforme as ações realizadas pelo usuário.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN01: Transações devem ser associadas a uma categoria.
+		\item RN03: Categorias com transações associadas não podem ser excluídas.
+		\item RN04: Ao dividir despesas em múltiplas categorias, o valor associado a cada categoria deve ser especificado.
+		\item RN13: Categorias não podem ser duplicadas em uma transação dividida.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A interface de gerenciamento de categorias deve ser clara e intuitiva, permitindo a criação, edição e exclusão com facilidade.
+	\end{itemize}
+\end{addmargin}

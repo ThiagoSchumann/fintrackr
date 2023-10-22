@@ -1,0 +1,29 @@
+% ----------------------------------------------------------
+\chapter{ADR-009 - Adoção do RabbitMQ para Comunicação entre o Microserviço da Planilha de Fatura e o Back-end Flask}
+% ----------------------------------------------------------
+\label{apendiceADR009}
+% Conteúdo do Apêndice ADR-009
+
+\subsubsection*{Title}
+Adoção do RabbitMQ para Comunicação entre o Microserviço da Planilha de Fatura e o Back-end Flask.
+
+\subsubsection*{Status}
+Accepted
+
+\subsubsection*{Context}
+Para integrar o microserviço especializado da planilha de fatura com o back-end Flask do \textit{Fintrackr}, é crucial ter uma solução de mensageiria confiável que facilite a comunicação assíncrona, garanta a entrega de mensagens e suporte a escalabilidade.
+
+\subsubsection*{Decision}
+Adotar o RabbitMQ como a principal solução de mensageiria para garantir a comunicação eficiente entre o microserviço da planilha de fatura e o back-end Flask.
+
+\subsubsection*{Consequences}
+\begin{itemize}
+	\item \textbf{Comunicação Assíncrona}: RabbitMQ permite que o microserviço e o back-end Flask se comuniquem de forma assíncrona, o que pode melhorar a eficiência e a resposta do sistema.
+	\item \textbf{Garantia de Entrega}: As mensagens podem ser armazenadas e reenviadas em caso de falhas, garantindo a entrega.
+	\item \textbf{Escalabilidade}: RabbitMQ suporta balanceamento de carga entre múltiplas instâncias, o que pode ajudar na escalabilidade da solução.
+	\item \textbf{Flexibilidade}: Permite a integração com outros sistemas e serviços no futuro, graças ao seu modelo de mensageiria baseado em tópicos e filas.
+	\item \textbf{Complexidade Adicional}: A introdução de uma solução de mensageira pode aumentar a complexidade do sistema e requerer monitoramento e gerenciamento adicionais.
+	\item \textbf{Dependência Externa}: A adoção do RabbitMQ introduz uma dependência externa que precisa ser gerenciada e mantida.
+\end{itemize}
+
+\newpage

@@ -1,0 +1,89 @@
+% ----------------------------------------------------------
+\chapter{UC03 - Registrar e Categorizar Transações}
+% ----------------------------------------------------------
+\label{apendiceUC03}
+
+\subsection*{Identificador}
+\textit{UC03}
+
+\subsection*{Título}
+Registrar e Categorizar Transações
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Gestão Financeira
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado no sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a seção de transações.
+		\item O usuário seleciona a opção para adicionar uma nova transação.
+		\item O sistema apresenta o formulário de registro de transações.
+		\item O usuário escolhe o tipo de transação: RegularTransaction ou CreditCardTransaction.
+		\item O usuário insere os detalhes da transação, incluindo valor, tipo (receita ou despesa), data, descrição e, se for o caso, a fatura associada (para CreditCardTransaction).
+		\item O usuário seleciona ou cria categorias para a transação.
+		\item Se necessário, o usuário define o mês de referência para a transação.
+		\item O sistema valida e registra a transação.
+		\item O usuário é informado do sucesso do registro e a transação é exibida na lista de transações.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Dividir Transação em Múltiplas Categorias}:
+		      \begin{enumerate}
+			      \item Durante o registro da transação, o usuário opta por dividir a despesa em múltiplas categorias.
+			      \item O usuário especifica o valor associado a cada categoria.
+			      \item O sistema verifica se o total dos valores distribuídos corresponde ao valor total da transação.
+			      \item A transação é registrada com múltiplas categorias associadas.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Valor da Transação Não Corresponde à Distribuição entre Categorias}:
+		      \begin{enumerate}
+			      \item O sistema detecta que o valor total distribuído entre as categorias não corresponde ao valor total da transação.
+			      \item O usuário é informado do erro e solicitado a ajustar os valores.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A transação é registrada e categorizada, e reflete no saldo e relatórios do usuário.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN01: Transações devem ser associadas a uma categoria.
+		\item RN05: O total de valores associados em uma transação dividida entre categorias deve igualar o valor total da transação.
+		\item RN09: Transações não podem ter datas futuras.
+		\item RN13: Categorias não podem ser duplicadas em uma transação dividida.
+		\item RN23: Todas as transações devem ter um mês de referência para controle orçamentário.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A interface de registro de transações deve ser simples e permitir a rápida inserção de múltiplas entradas.
+	\end{itemize}
+\end{addmargin}

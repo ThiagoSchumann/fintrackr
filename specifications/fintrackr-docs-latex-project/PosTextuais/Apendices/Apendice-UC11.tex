@@ -1,0 +1,64 @@
+% ----------------------------------------------------------
+\chapter{UC11 -  Definir Mês de Referência para Transações}
+% ----------------------------------------------------------
+\label{apendiceUC11}
+
+\subsection*{Identificador}
+\textit{UC11}
+
+\subsection*{Título}
+Definir Mês de Referência para Transações
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Gestão Financeira
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado no sistema.
+		\item O usuário está registrando ou editando uma transação.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item Durante o registro ou edição de uma transação, o usuário identifica a necessidade de definir um mês de referência.
+		\item O sistema apresenta a opção para selecionar o mês de referência.
+		\item O usuário seleciona o mês e ano desejados.
+		\item O sistema valida a escolha.
+		\item O mês de referência é associado à transação.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\textit{N/A}
+
+\subsection*{Fluxos de Exceção}
+\textit{N/A}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O mês de referência é definido para a transação, permitindo um controle orçamentário mais preciso.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN23: Todas as transações devem ter um mês de referência para controle orçamentário.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A definição do mês de referência é especialmente crucial para transações de cartão de crédito, onde o impacto orçamentário pode não coincidir com a data da transação.
+	\end{itemize}
+\end{addmargin}

@@ -1,0 +1,90 @@
+% ----------------------------------------------------------
+\chapter{UC10 - Gerenciar Bancos}
+% ----------------------------------------------------------
+\label{apendiceUC10}
+
+\subsection*{Identificador}
+\textit{UC10}
+
+\subsection*{Título}
+Gerenciar Bancos
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Gerenciamento de Bancos
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado no sistema.
+		\item O usuário possui acesso à seção de gerenciamento de bancos.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a seção de gerenciamento de bancos.
+		\item O sistema exibe a lista de bancos cadastrados pelo usuário.
+		\item O usuário pode escolher adicionar, editar ou excluir informações de um banco.
+		\item O sistema realiza a ação solicitada e atualiza a lista de bancos.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Adicionar Novo Banco}:
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção para adicionar um novo banco.
+			      \item O sistema apresenta um formulário para inserção de detalhes do banco.
+			      \item O usuário preenche os detalhes e submete o formulário.
+			      \item O sistema valida as informações e adiciona o novo banco à lista.
+		      \end{enumerate}
+
+		\item \textbf{Editar Informações de um Banco Existente}:
+		      \begin{enumerate}
+			      \item O usuário seleciona um banco da lista e escolhe a opção para editar.
+			      \item O sistema apresenta um formulário preenchido com as informações atuais do banco.
+			      \item O usuário realiza as alterações desejadas e submete o formulário.
+			      \item O sistema valida e atualiza as informações do banco.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Informações do Banco Duplicadas}:
+		      \begin{enumerate}
+			      \item O sistema detecta que as informações inseridas para um novo banco ou após a edição já existem para outro banco registrado.
+			      \item O sistema informa ao usuário sobre a duplicidade e solicita correção.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A lista de bancos do usuário é atualizada com as informações corretas.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN10: O email fornecido pelo usuário durante o registro ou atualização do perfil deve ser único no sistema.
+		\item RN15: Informações de cartões ou contas duplicadas não são permitidas.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O gerenciamento eficaz de informações bancárias é crucial para a integridade dos dados e a experiência do usuário.
+	\end{itemize}
+\end{addmargin}

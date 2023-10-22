@@ -1,0 +1,28 @@
+
+% ----------------------------------------------------------
+\chapter{ADR-004 - Adoção de Arquitetura Monolítica no Front-end do \textit{Fintrackr}}
+% ----------------------------------------------------------
+\label{apendiceADR004}
+% Conteúdo do Apêndice ADR-004
+
+\subsubsection*{Title}
+Adoção de Arquitetura Monolítica no Front-end do \textit{Fintrackr}.
+
+\subsubsection*{Status}
+Accepted
+
+\subsubsection*{Context}
+O projeto \textit{Fintrackr} busca fornecer uma solução eficaz para o gerenciamento de finanças. Dada a pouca experiência da equipe com o desenvolvimento de front-end e a necessidade de garantir uma rápida aprendizagem e eficiência no desenvolvimento, é crucial escolher uma abordagem arquitetural que seja familiar e minimamente complexa.
+
+\subsubsection*{Decision}
+Adotar uma arquitetura monolítica para o front-end do \textit{Fintrackr}.
+
+\subsubsection*{Consequences}
+\begin{itemize}
+	\item \textbf{Simplicidade}: Um front-end monolítico é mais simples de entender, desenvolver e manter, especialmente para equipes menos experientes.
+	\item \textbf{Integração Estreita}: Todos os componentes do front-end estarão estreitamente integrados, permitindo uma melhor coesão.
+	\item \textbf{Menor Curva de Aprendizado}: A equipe pode se concentrar em desenvolver funcionalidades em vez de gerenciar a complexidade de múltiplos serviços ou componentes independentes.
+	\item \textbf{Desafios de Escalabilidade}: À medida que o projeto cresce, pode haver desafios associados à escalabilidade e manutenção do front-end monolítico.
+\end{itemize}
+
+\newpage

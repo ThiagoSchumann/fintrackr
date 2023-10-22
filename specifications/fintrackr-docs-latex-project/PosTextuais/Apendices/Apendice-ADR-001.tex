@@ -1,0 +1,26 @@
+
+% ----------------------------------------------------------
+\chapter{ADR-001 - Tentativa de Implementar Todo o Projeto do \textit{Fintrackr} Usando Microserviços}
+% ----------------------------------------------------------
+\label{apendiceADR001}
+% Conteúdo do Apêndice ADR-001
+
+\subsubsection*{Title}
+Tentativa de Implementar Todo o Projeto do \textit{Fintrackr} Usando Microserviços.
+
+\subsubsection*{Status}
+Rejected - Devido ao tempo e à complexidade aumentada, decidiu-se não seguir essa abordagem.
+
+\subsubsection*{Context}
+O projeto \textit{Fintrackr} visa oferecer uma ferramenta robusta para o gerenciamento de finanças. Com o aumento da complexidade e a variedade de funcionalidades, considerou-se a possibilidade de utilizar uma abordagem totalmente baseada em microserviços.
+
+\subsubsection*{Decision}
+Tentar implementar todo o projeto do \textit{Fintrackr} usando uma arquitetura baseada em microserviços.
+
+\subsubsection*{Consequences}
+\begin{itemize}
+	\item \textbf{Especialização}: Cada microserviço pode ser otimizado para sua função específica.
+	\item \textbf{Flexibilidade}: Microserviços podem ser desenvolvidos, escalados ou modificados independentemente.
+	\item \textbf{Resiliência}: Falhas em um microserviço não afetariam outros microserviços.
+	\item \textbf{Complexidade Aumentada}: A gestão de múltiplos microserviços pode complicar o desenvolvimento e a manutenção.
+\end{itemize}

@@ -1,0 +1,210 @@
+\chapter{Pipeline de CI/CD}
+
+\section{Ferramenta de versionamento}
+
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{\textbf{Plataforma}} & \multicolumn{3}{c|}{\textbf{Comparação}}                                                                          \\ \cline{2-4}
+			                                     & \textbf{GitHub}                          & \textbf{GitLab}             & \textbf{Bitbucket}                       \\ \hline
+
+			\multirow{2}{*}{\textbf{Benefícios}}
+			                                     & Comunidade ampla,                        & CI/CD integrado,            & Integração Atlassian,                    \\
+			                                     & Marketplace extenso.                     & Privacidade gratuita.       & Repositórios privados gratuitos.         \\ \hline
+
+			\multirow{2}{*}{\textbf{Desvantagens}}
+			                                     & Preço por repositório privado,           & Interface menos intuitiva,  & Limitações em repositórios gratuitos,    \\
+			                                     & Limitações de armazenamento.             & Recursos de hardware.       & Menos recursos de CI/CD.                 \\ \hline
+
+			\multirow{2}{*}{\textbf{Uso Comum}}
+			                                     & Projetos open-source,                    & Solução completa de DevOps, & Equipes usando Atlassian.                \\
+			                                     & Colaboração em larga escala.             & Controle total sobre CI/CD. & Integração de gerenciamento de projetos. \\ \hline
+		\end{tabular}%
+	}
+	\caption{Comparação entre GitHub, GitLab e Bitbucket}
+	\label{tab:platform_comparison}
+\end{table}
+
+\par Será utilizado o GitHub para controle de versões e colaboração eficiente no desenvolvimento de software. Ele fornece um ambiente centralizado para armazenar, acompanhar e gerenciar código-fonte, facilita a colaboração de equipes distribuídas e ajuda a controlar mudanças e atualizações no código, tornando o processo de desenvolvimento mais organizado, transparente e eficaz.
+
+\section{Servidor de CI/CD}
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{\textbf{Critério}} & \multicolumn{4}{c|}{\textbf{Servidor de CI/CD}}                                                                                     \\ \cline{2-5}
+			                                   & \textbf{Jenkins}                                & \textbf{TravisCI}         & \textbf{CircleCI}      & \textbf{AWS CodePipeline}    \\ \hline
+
+			\textbf{Quando Usar}               & Projetos grandes com                            & Projetos open-source      & Projetos pequenos      & Projetos na AWS              \\
+			                                   & necessidade de customização.                    & com diferentes ambientes. & com integração rápida. & com serviços AWS integrados. \\ \hline
+
+			\textbf{Benefícios}                & Alta customização,                              & Integração rápida,        & Integração rápida,     & Integração com               \\
+			                                   & pipelines codificáveis.                         & fácil configuração.       & fácil configuração.    & serviços AWS.                \\ \hline
+
+			\textbf{Desvantagens}              & Complexo e demorado                             & Ideal para projetos       & Pode ser limitado para & Menos flexível com           \\
+			                                   & para configurar.                                & menores.                  & projetos grandes.      & integrações de terceiros.    \\ \hline
+		\end{tabular}%
+	}
+	\caption{Comparação entre Servidores de CI/CD}
+	\label{tab:ci_cd_comparison}
+\end{table}
+
+A escolha do Jenkins como nossa ferramenta de CI/CD é estratégica devido à sua natureza de código aberto e à familiaridade preexistente da nossa equipe com ela. O caráter open source do Jenkins alinha-se com nosso valor de promover a transparência e flexibilidade, enquanto a familiaridade da equipe acelera a integração e minimiza a curva de aprendizado. Com uma comunidade ativa e um ecossistema robusto, o Jenkins oferece um ambiente confiável para automatizar nossos processos de desenvolvimento, tornando-se uma escolha sólida para nosso projeto.
+
+\section{Tecnologia utilizada}
+Com base na estrutura do projeto proposta, foi realizada uma divisão clara entre o front-end e o back-end, sendo este último subdividido em dois projetos distintos. O primeiro projeto back-end é um microserviço dedicado a manipular e calcular dados para a planilha do Bradesco, enquanto o segundo engloba o restante das funcionalidades do software. A tabela a seguir apresenta uma visão geral das tecnologias de programação que serão adotadas para cada segmento do sistema, destacando quando usar, os benefícios e as desvantagens associadas a cada escolha tecnológica.
+
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Segmento do Sistema} & \textbf{Tecnologia} & \textbf{Finalidade}                                            & \textbf{Benefícios}                            \\ \hline
+			Back-end (Geral)             & Python com Flask    & Desenvolvimento do núcleo funcional do sistema.                & Desenvolvimento rápido, fácil de aprender.     \\ \hline
+			Microserviço Planilha        & Python com Pandas   & Manipulação e cálculo de dados da planilha do Bradesco.        & Manipulação eficiente de dados, fácil de usar. \\ \hline
+			Front-end                    & React               & Construção de interfaces de usuário interativas e responsivas. & Componentização, reutilização de código.       \\ \hline
+		\end{tabular}%
+	}
+	\caption{Tecnologias Adotadas nos Segmentos do Sistema}
+	\label{tab:technology_adoption}
+\end{table}
+
+
+Nesta tabela, especificamos as tecnologias que serão utilizadas em cada segmento do sistema, juntamente com o contexto de uso, os benefícios e as desvantagens de cada uma. O Python foi escolhido para o back-end devido à sua simplicidade e rapidez no desenvolvimento, com o Flask proporcionando um framework leve para construir o back-end geral, e o Pandas oferecendo poderosas capacidades de manipulação de dados para o microserviço da planilha. Por outro lado, o React foi selecionado para o front-end devido à sua eficácia em construir interfaces de usuário interativas e reutilizáveis.
+
+\section{Ferramentas de Build}
+A seleção de uma ferramenta adequada para gerenciamento de dependências e construção do projeto é crucial para a eficiência do processo de desenvolvimento. Maven, Gradle e Docker são três tecnologias populares, cada uma com suas peculiaridades. Maven é conhecido por sua simplicidade e reprodutibilidade, Gradle por sua flexibilidade e desempenho, enquanto Docker destaca-se na criação e distribuição de contêineres. A tabela abaixo apresenta uma comparação entre essas tecnologias, visando auxiliar na escolha consciente da ferramenta mais alinhada às necessidades do projeto.
+
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{\textbf{Critério}} & \multicolumn{3}{c|}{\textbf{Tecnologia}}                                                                       \\ \cline{2-4}
+			                                   & \textbf{Maven}                           & \textbf{Gradle}         & \textbf{Docker}                           \\ \hline
+
+			\textbf{Quando Usar}               & Projetos com                             & Projetos que necessitam & Quando a criação e                        \\
+			                                   & estruturação clara.                      & de flexibilidade.       & distribuição de contêineres é necessária. \\ \hline
+
+			\textbf{Benefícios}                & Simplicidade,                            & Flexibilidade,          & Portabilidade,                            \\
+			                                   & reprodutibilidade.                       & desempenho.             & isolamento.                               \\ \hline
+
+			\textbf{Desvantagens}              & Menos flexível,                          & Curva de aprendizado    & Requer conhecimento                       \\
+			                                   & pode ser lento.                          & inicial.                & em contêineres.                           \\ \hline
+		\end{tabular}%
+	}
+	\caption{Comparação entre Maven, Gradle e Docker}
+	\label{tab:technology_comparison}
+\end{table}
+
+
+\section{Definição de Ferramentas e Estrutura de Execução para Deploy}
+
+A implantação eficaz do \textit{Fintrackr} é crucial para garantir uma experiência de usuário contínua e robusta. Para alcançar essa eficiência, adotamos um conjunto de ferramentas líderes de mercado e definimos uma estrutura de execução que prioriza a escalabilidade, consistência e facilidade de manutenção.
+
+\section{Ferramentas para Deploy}
+
+\begin{itemize}
+	\item \textbf{Ansible}: Uma ferramenta de automação poderosa que usamos para o provisionamento e configuração. Com sua ampla gama de módulos, o Ansible não apenas configura nodes do Kubernetes e instala o Docker, mas também se integra perfeitamente com outros sistemas e ferramentas, garantindo uma implantação homogênea e sem problemas.
+
+	\item \textbf{GitHub}: Escolhido para controle de versões, o GitHub nos permite colaborar eficientemente e manter um histórico detalhado de todas as mudanças no código, facilitando o rastreamento e a reversão, se necessário.
+
+	\item \textbf{Jenkins}: Para a integração contínua e entrega contínua (CI/CD), adotamos o Jenkins devido à sua flexibilidade, ampla comunidade e capacidade de se integrar com uma variedade de outras ferramentas, incluindo o Ansible e o Kubernetes.
+\end{itemize}
+
+\section{Estrutura de Execução}
+
+\begin{itemize}
+	\item \textbf{Docker}: A contêinerização é fundamental na era moderna da computação em nuvem. O Docker nos permite encapsular nossa aplicação e todas as suas dependências em contêineres, garantindo uma execução consistente em todos os ambientes, desde o desenvolvimento até a produção.
+\end{itemize}
+\section{GitFlow}
+O \textit{GitFlow} é uma estratégia de fluxo de trabalho do Git que define uma estrutura robusta para projetos, facilitando o desenvolvimento paralelo, a colaboração em equipe e o lançamento de versões estáveis. A estratégia é composta por várias \textit{branches} que têm propósitos específicos. A seguir, detalhamos essas \textit{branches} e suas interações:
+
+\begin{itemize}
+	\item \textbf{main}: Contém o código considerado como produção. Cada \textit{commit} nesta branch é uma nova versão de produção.
+
+	\item \textbf{develop}: Atua como uma branch de integração para novos recursos e é o principal local de desenvolvimento contínuo.
+
+	\item \textbf{feature branches}: Criadas a partir da branch \textit{develop}. São utilizadas para desenvolver novas funcionalidades sem afetar o código principal. Quando uma funcionalidade é concluída, um \textit{Pull Request} (PR) é criado para mesclar a \textit{feature branch} de volta à branch \textit{develop}.
+
+	\item \textbf{hotfix branches}: Surgem a partir da branch \textit{main}. Destinadas para correções rápidas diretamente no código de produção. Quando uma correção é finalizada, PRs são abertos para integrar a \textit{hotfix branch} tanto na branch \textit{main} quanto na \textit{develop}.
+\end{itemize}
+
+Os \textit{Pull Requests} (PRs) desempenham um papel fundamental no GitFlow. Eles oferecem um ponto de revisão e teste, garantindo que o código seja de alta qualidade antes da integração. Esse processo de revisão é vital para a colaboração em equipe, permitindo que os membros da equipe revisem, comentem e testem as alterações propostas antes de serem incorporadas ao código base.
+
+O GitFlow, com sua estrutura clara e regras definidas, ajuda as equipes a gerenciar e versionar seu código de forma eficaz, garantindo lançamentos estáveis e facilitando o desenvolvimento contínuo e a colaboração.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{Textuais/gitflow.png}
+	\caption{\textit{GitFlow}}
+	\label{fig:enter-label}
+\end{figure}
+
+\section{Testes}
+\subsection{Ferramentas de Testes}
+
+\par Para a linguagem Python será utilizado o Pytest, conhecido por sua sintaxe simples, identificação automática de testes, uso de fixtures, suporte a parametrização, extensibilidade por meio de plugins, e facilidade de integração com outras ferramentas de desenvolvimento. É amplamente adotado em projetos de código aberto e empresas, tornando o processo de teste eficiente e agradável para os desenvolvedores.
+
+\par Para a linguagem React, será utilizado o Jest, ele é um framework de teste desenvolvido pelo Facebook que é amplamente usado na comunidade React. Ele é projetado para testar JavaScript, incluindo código React. O Jest é conhecido por sua simplicidade e integração perfeita com o React. Ele suporta testes de componentes, testes de unidades e testes de integração.
+
+\subsection{Metrica de Cobertura de Testes}
+\par A meta do nosso projeto é atingir uma cobertura de testes de 60\%. A cobertura de testes é fundamental para garantir a qualidade e a confiabilidade do nosso software. Com uma cobertura adequada, podemos identificar e corrigir erros de maneira eficaz, melhorar a manutenção do código e aumentar a confiança na estabilidade do sistema.
+\par Para alcançar essa meta, planejamos implementar uma estratégia abrangente de testes que serão executados regularmente em um ambiente de integração contínua para garantir que nossa cobertura de testes seja mantida ao longo do tempo.
+\par Atingir 60\% de cobertura de testes é um processo contínuo, e planejamos monitorar nosso progresso ao longo do ciclo de vida do projeto. Estabelecemos marcos específicos para avaliar nosso avanço e faremos ajustes conforme necessário para atender a essa meta.
+\par Acreditamos que essa abordagem nos permitirá entregar um software de alta qualidade, com menos bugs e maior confiabilidade, beneficiando nossos usuários finais e nossa equipe de desenvolvimento
+
+\section{Artefact Management}
+
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{\textbf{Tecnologia}} & \multicolumn{4}{c|}{\textbf{Aspectos}}                                                                       \\ \cline{2-5}
+			                                     & \textbf{Benefícios}                    & \textbf{Desvantagens} & \textbf{Uso Comum} & \textbf{Indicado Para} \\ \hline
+
+			\textbf{Nexus}                       &
+			- Gerenciamento de dependências.
+			                                     &
+			- Requer configuração.
+			                                     &
+			- Armazenamento de artefatos.
+			                                     &
+			- Projetos grandes.
+			\\ \hline
+
+			\textbf{DockerHub}                   &
+			- Hospedagem de imagens Docker.
+			                                     &
+			- Limitações em repositórios públicos.
+			                                     &
+			- Distribuição de contêineres.
+			                                     &
+			- Projetos com Docker.
+			\\ \hline
+
+			\textbf{Sonar}                       &
+			- Análise contínua da qualidade.
+			                                     &
+			- Configuração inicial.
+			                                     &
+			- Melhoria da qualidade do código.
+			                                     &
+			- Projetos com foco em qualidade.
+			\\ \hline
+		\end{tabular}%
+	}
+	\caption{Comparação entre Nexus, DockerHub, Sonar e Infraestrutura}
+	\label{tab:technology_comparison}
+\end{table}
+
+
+\par Em nosso projeto, usaremos o SonarQube com o Docker, pois como vimos em sala é muito prático levantá-lo junto ao Docker, Ainda é muito  vantajoso porque permite analisar e melhorar a qualidade do código fonte, identificar vulnerabilidades de segurança, detectar bugs e defeitos, manter padrões de codificação consistentes, integrar análises de código ao pipeline de desenvolvimento, fornecer feedback imediato aos desenvolvedores, rastrear o histórico das análises, personalizar a configuração, gerar relatórios detalhados e, em última análise, aprimorar a qualidade do software. Isso contribui para a segurança, confiabilidade e desempenho de aplicativos em containers Docker.
+
+
+\section{Documentação}
+O Swagger é uma poderosa ferramenta para a construção de APIs RESTful, proporcionando uma suite completa para desenho, construção, documentação e uso de APIs. Ele fornece um conjunto de recursos que auxiliam os desenvolvedores a criar APIs consistentes, testáveis e padronizadas. Um dos componentes mais valiosos do Swagger é o Swagger UI, que fornece uma interface visual para interagir com a API, permitindo que os desenvolvedores e os usuários finais visualizem e testem as funcionalidades da API de forma intuitiva. No contexto do \textit{FinTrackr}, o Swagger será inestimável para documentar e testar as várias endpoints da API. Isso não só facilitará a integração entre o front-end e o back-end, mas também fornecerá uma referência clara para os desenvolvedores e partes interessadas sobre como a API funciona, quais dados ela aceita e quais respostas podem ser esperadas. Ao adotar o Swagger no \textit{FinTrackr}, garantimos uma abordagem padronizada e eficiente para a construção e documentação da API.

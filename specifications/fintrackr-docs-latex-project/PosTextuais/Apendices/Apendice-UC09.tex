@@ -1,0 +1,82 @@
+% ----------------------------------------------------------
+\chapter{UC09 - Acompanhar Evolução de Saldo}
+% ----------------------------------------------------------
+\label{apendiceUC09}
+
+\subsection*{Identificador}
+\textit{UC09}
+
+\subsection*{Título}
+Acompanhar Evolução de Saldo
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema Financeiro
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado e possui acesso ao dashboard.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário seleciona a opção para visualizar o histórico de saldo.
+		\item O sistema apresenta uma representação gráfica (por exemplo, um gráfico de linhas) da evolução do saldo ao longo do tempo.
+		\item O usuário pode selecionar diferentes intervalos de tempo (por exemplo, mês atual, últimos 6 meses, ano atual, etc.).
+		\item O sistema atualiza a visualização com base no intervalo de tempo selecionado.
+		\item O usuário pode interagir com o gráfico para obter detalhes específicos de datas e valores.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Exportar Dados}:
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção para exportar os dados do histórico de saldo.
+			      \item O sistema oferece formatos de exportação (por exemplo, CSV, PDF).
+			      \item O usuário seleciona o formato desejado e confirma.
+			      \item O sistema gera e disponibiliza o arquivo para download.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Sem Dados Suficientes}:
+		      \begin{enumerate}
+			      \item O sistema detecta que não há dados suficientes para exibir uma evolução significativa do saldo.
+			      \item O sistema informa ao usuário sobre a falta de dados e sugere o registro de mais transações.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário tem uma visão clara da evolução do seu saldo financeiro ao longo do tempo.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN08: Transações em contas impactam o saldo da mesma.
+		\item RN09: Transações não podem ter datas futuras.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A interface de visualização do histórico de saldo deve ser clara e proporcionar fácil interpretação dos dados.
+	\end{itemize}
+\end{addmargin}

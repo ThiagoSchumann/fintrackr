@@ -1,0 +1,84 @@
+% ----------------------------------------------------------
+\chapter{UC02 - Gerenciar Perfil}
+% ----------------------------------------------------------
+\label{apendiceUC02}
+
+\subsection*{Identificador}
+\textit{UC02}
+% Conteúdo do Apêndice UC02
+
+\subsection*{Título}
+Gerenciar Perfil
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Gerenciamento de Perfil
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado no sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a seção de perfil.
+		\item O sistema apresenta as informações atuais do perfil do usuário.
+		\item O usuário seleciona a opção para editar o perfil.
+		\item O usuário atualiza as informações desejadas e confirma as mudanças.
+		\item O sistema valida e salva as alterações.
+		\item O usuário é informado sobre o sucesso da atualização.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Alterar Senha}:
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção para alterar a senha.
+			      \item O sistema solicita a senha atual e a nova senha.
+			      \item O usuário insere as informações e confirma.
+			      \item O sistema valida a senha atual, aplica as regras de complexidade à nova senha e, se válido, atualiza a senha do usuário.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Dados Inválidos}:
+		      \begin{enumerate}
+			      \item Durante a atualização do perfil, o sistema detecta dados inválidos ou incompletos.
+			      \item O sistema informa ao usuário sobre os campos inválidos ou o que precisa ser corrigido.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item As informações do perfil do usuário são atualizadas no sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN17: Senhas devem ter um mínimo de 8 caracteres e conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.
+		\item RN20: Para alterar a senha, o usuário deve fornecer a senha atual para confirmação.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item As informações do perfil devem ser tratadas com privacidade, e quaisquer alterações devem ser realizadas de forma segura.
+	\end{itemize}
+\end{addmargin}

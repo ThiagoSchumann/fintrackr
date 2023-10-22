@@ -1,0 +1,84 @@
+% ----------------------------------------------------------
+\chapter{UC05 - Gerenciar Orçamentos}
+% ----------------------------------------------------------
+\label{apendiceUC05}
+
+\subsection*{Identificador}
+\textit{UC05}
+% Conteúdo do Apêndice UC05
+
+\subsection*{Título}
+Gerenciar Orçamentos
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Gestão Financeira
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado e possui acesso à seção de orçamentos.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a seção de orçamentos.
+		\item O sistema exibe os orçamentos existentes categorizados por mês e categoria.
+		\item O usuário seleciona um mês específico para visualizar ou editar.
+		\item O sistema exibe detalhes do orçamento para o mês selecionado.
+		\item O usuário pode adicionar, editar ou remover valores de orçamento para categorias específicas.
+		\item O sistema valida e salva as alterações feitas pelo usuário.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Criar Novo Orçamento}:
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção para criar um novo orçamento.
+			      \item O sistema apresenta um formulário para inserir valores de orçamento por categoria.
+			      \item O usuário preenche os valores e submete.
+			      \item O sistema valida os dados e cria o novo orçamento.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Valores Negativos ou Inválidos}:
+		      \begin{enumerate}
+			      \item O sistema detecta valores negativos ou inválidos durante a edição ou criação de um orçamento.
+			      \item O sistema informa ao usuário sobre o erro e solicita correção.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item As alterações feitas pelo usuário nos orçamentos são salvas e refletidas no sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN05: Orçamentos não podem ter valores negativos.
+		\item RN12: Usuários devem ser notificados ao atingir ou exceder orçamentos.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A seção de orçamentos deve ser de fácil acesso e visualização, permitindo uma gestão rápida e eficiente dos valores.
+	\end{itemize}
+\end{addmargin}

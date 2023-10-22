@@ -1,0 +1,30 @@
+
+% ----------------------------------------------------------
+\chapter{ADR-003 - Criação de Microserviço Especializado para Processamento de Planilhas no \textit{Fintrackr}}
+% ----------------------------------------------------------
+\label{apendiceADR003}
+% Conteúdo do Apêndice ADR-003
+
+\subsubsection*{Title}
+Criação de Microserviço Especializado para Processamento de Planilhas no \textit{Fintrackr}.
+
+\subsubsection*{Status}
+Accepted
+
+\subsubsection*{Context}
+O \textit{Fintrackr} tem uma necessidade específica de processar informações de planilhas, transformando-as em um formato desejado para integração com o sistema. Esta operação é distinta das funções de lógica de negócios principais e, portanto, requer uma abordagem arquitetural especializada.
+
+\subsubsection*{Decision}
+Criar um microserviço dedicado responsável por receber, processar e retornar informações de planilhas em um formato desejado.
+
+\subsubsection*{Consequences}
+\begin{itemize}
+	\item \textbf{Especialização}: O microserviço pode ser otimizado para processar planilhas de forma eficiente.
+	\item \textbf{Flexibilidade}: O microserviço pode ser desenvolvido, escalado ou modificado independentemente do monólito.
+	\item \textbf{Isolamento}: Falhas ou problemas no microserviço não afetarão o funcionamento do monólito.
+	\item \textbf{Complexidade Adicional}: Introduz a necessidade de gerenciar a comunicação entre o monólito e o microserviço.
+	\item \textbf{Overhead de Rede}: A comunicação entre o monólito e o microserviço pode introduzir latências.
+	\item \textbf{Curva de aprendizado}: Os desenvolvedores podem precisar de formação ou familiarização com a gestão de microserviços.
+	\item \textbf{Gerenciamento}: Monitoramento, logging e rastreamento adicionais serão necessários para gerenciar o microserviço.
+	\item \textbf{Integração}: Garantir uma integração robusta e eficiente com o monólito será crucial.
+\end{itemize}

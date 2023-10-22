@@ -1,0 +1,92 @@
+% ----------------------------------------------------------
+\chapter{UC01 - Autenticação no Sistema}
+% ----------------------------------------------------------
+\label{apendiceUC01}
+% Conteúdo do Apêndice UC01
+
+\subsection*{Identificador}
+\textit{UC01}
+
+\subsection*{Título}
+Autenticação no Sistema
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Autenticação
+	\end{itemize}
+\end{addmargin}
+
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário possui acesso à interface de login.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a página de login.
+		\item O usuário insere seu email e senha.
+		\item O sistema valida as credenciais.
+		\item O usuário é autenticado e redirecionado para o dashboard.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Registro de Novo Usuário}
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção para registrar-se.
+			      \item O sistema direciona o usuário para o formulário de registro.
+			      \item O usuário preenche os detalhes necessários e submete o formulário.
+			      \item O sistema valida as informações e cria uma nova conta.
+			      \item O usuário é redirecionado para a página de login.
+		      \end{enumerate}
+
+		\item \textbf{Recuperação de Senha}
+		      \begin{enumerate}
+			      \item O usuário seleciona a opção "Esqueceu a senha?".
+			      \item O sistema solicita o email do usuário.
+			      \item O usuário insere seu email e submete a solicitação.
+			      \item O sistema envia um link de recuperação de senha para o email do usuário.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Credenciais Inválidas}
+		      \begin{enumerate}
+			      \item O sistema detecta que o email ou senha inseridos estão incorretos.
+			      \item O sistema informa ao usuário sobre as credenciais inválidas.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário obtém acesso às funcionalidades autenticadas do sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN16: Os usuários devem fornecer um email e senha válidos para se autenticar no sistema.
+		\item RN17: Senhas devem ter um mínimo de 8 caracteres e conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A interface de autenticação deve ser simples e intuitiva, minimizando erros de usuário.
+	\end{itemize}
+\end{addmargin}

@@ -1,0 +1,84 @@
+% ----------------------------------------------------------
+\chapter{UC06 - Visualizar Dashboard Financeiro}
+% ----------------------------------------------------------
+\label{apendiceUC06}
+
+\subsection*{Identificador}
+\textit{UC06}
+
+\subsection*{Título}
+Visualizar Dashboard Financeiro
+
+\subsection*{Atores}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item Usuário
+		\item Sistema de Finanças
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pré-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário está autenticado no sistema.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxo Principal}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{enumerate}
+		\item O usuário acessa a seção de dashboard.
+		\item O sistema exibe o saldo total em contas.
+		\item O sistema lista todas as contas com seus respectivos saldos e transações recentes.
+		\item O sistema apresenta um resumo dos orçamentos definidos para o mês.
+		\item O sistema mostra o total gasto por categoria.
+		\item O sistema exibe um balanço geral de receitas versus despesas para o período selecionado.
+	\end{enumerate}
+\end{addmargin}
+
+\subsection*{Fluxos Alternativos}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Exclusão de Conta do Saldo Total}:
+		      \begin{enumerate}
+			      \item O usuário seleciona uma ou mais contas para serem excluídas do saldo total.
+			      \item O sistema atualiza o saldo total exibido, excluindo as contas selecionadas.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Fluxos de Exceção}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item \textbf{Dados Indisponíveis}:
+		      \begin{enumerate}
+			      \item O sistema detecta um erro ao recuperar os dados financeiros do usuário.
+			      \item O sistema informa ao usuário sobre o erro e sugere que ele tente novamente mais tarde.
+		      \end{enumerate}
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Pós-condições}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item O usuário tem uma visão clara e atualizada de sua situação financeira.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Regras de Negócio}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item RN05: O total de valores associados em uma transação dividida entre categorias deve igualar o valor total da transação.
+		\item RN06: Orçamentos não podem ter valores negativos.
+		\item RN07: Despesas em cartões de crédito devem ser associadas à fatura corrente.
+		\item RN08: Transações em contas impactam o saldo da mesma.
+		\item RN09: Transações não podem ter datas futuras.
+	\end{itemize}
+\end{addmargin}
+
+\subsection*{Notas e Comentários}
+\begin{addmargin}[1.5cm]{0cm}
+	\begin{itemize}
+		\item A interface do dashboard deve ser projetada para facilitar a compreensão rápida dos principais indicadores financeiros do usuário.
+	\end{itemize}
+\end{addmargin}
