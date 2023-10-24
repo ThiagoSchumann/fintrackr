@@ -11,87 +11,87 @@ Gerenciar Cartões e Faturas
 
 \subsection*{Atores}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item Usuário
-		\item Sistema de Gerenciamento Financeiro
-	\end{itemize}
+    \begin{itemize}
+        \item Usuário
+        \item Sistema de Gerenciamento Financeiro
+    \end{itemize}
 \end{addmargin}
 
 \subsection*{Pré-condições}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item O usuário está autenticado e possui acesso à seção de gerenciamento de cartões.
-	\end{itemize}
+    \begin{itemize}
+        \item O usuário está autenticado e possui acesso à seção de gerenciamento de cartões.
+    \end{itemize}
 \end{addmargin}
 
 \subsection*{Fluxo Principal}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{enumerate}
-		\item O usuário acessa a seção de gerenciamento de cartões.
-		\item O usuário visualiza seus cartões cadastrados.
-		\item O usuário seleciona um cartão específico para visualizar detalhes e faturas associadas.
-		\item O usuário pode adicionar, editar ou excluir informações do cartão.
-		\item O usuário pode visualizar, adicionar, editar ou excluir faturas associadas ao cartão.
-	\end{enumerate}
+    \begin{enumerate}
+        \item O usuário acessa a seção de gerenciamento de cartões.
+        \item O usuário visualiza seus cartões cadastrados.
+        \item O usuário seleciona um cartão específico para visualizar detalhes e faturas associadas.
+        \item O usuário pode adicionar, editar ou excluir informações do cartão.
+        \item O usuário pode visualizar, adicionar, editar ou excluir faturas associadas ao cartão.
+    \end{enumerate}
 \end{addmargin}
 
 \subsection*{Fluxos Alternativos}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item \textbf{Adicionar Novo Cartão}:
-		      \begin{enumerate}
-			      \item O usuário seleciona a opção para adicionar um novo cartão.
-			      \item O sistema apresenta um formulário para inserção de detalhes do cartão.
-			      \item O usuário preenche os detalhes e submete o formulário.
-			      \item O sistema valida as informações e adiciona o novo cartão à lista do usuário.
-		      \end{enumerate}
-
-		\item \textbf{Excluir Cartão}:
-		      \begin{enumerate}
-			      \item O usuário seleciona um cartão e escolhe a opção para excluir.
-			      \item O sistema solicita confirmação.
-			      \item O usuário confirma a exclusão.
-			      \item O sistema remove o cartão e todas as faturas associadas.
-		      \end{enumerate}
-	\end{itemize}
+    \begin{itemize}
+        \item \textbf{Adicionar Novo Cartão}:
+        \begin{enumerate}
+            \item O usuário seleciona a opção para adicionar um novo cartão.
+            \item O sistema apresenta um formulário para inserção de detalhes do cartão.
+            \item O usuário preenche os detalhes e submete o formulário.
+            \item O sistema valida as informações e adiciona o novo cartão à lista do usuário.
+        \end{enumerate}
+        
+        \item \textbf{Excluir Cartão}:
+        \begin{enumerate}
+            \item O usuário seleciona um cartão e escolhe a opção para excluir.
+            \item O sistema solicita confirmação.
+            \item O usuário confirma a exclusão.
+            \item O sistema remove o cartão e todas as faturas associadas.
+        \end{enumerate}
+    \end{itemize}
 \end{addmargin}
 
 \subsection*{Fluxos de Exceção}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item \textbf{Erro ao Adicionar Cartão}:
-		      \begin{enumerate}
-			      \item O sistema detecta um erro durante a adição do cartão (por exemplo, informações inválidas).
-			      \item O sistema informa ao usuário sobre o erro.
-		      \end{enumerate}
-
-		\item \textbf{Erro ao Excluir Cartão}:
-		      \begin{enumerate}
-			      \item O sistema detecta um erro durante a exclusão do cartão (por exemplo, faturas pendentes).
-			      \item O sistema informa ao usuário sobre o erro.
-		      \end{enumerate}
-	\end{itemize}
+    \begin{itemize}
+        \item \textbf{Erro ao Adicionar Cartão}:
+        \begin{enumerate}
+            \item O sistema detecta um erro durante a adição do cartão (por exemplo, informações inválidas).
+            \item O sistema informa ao usuário sobre o erro.
+        \end{enumerate}
+        
+        \item \textbf{Erro ao Excluir Cartão}:
+        \begin{enumerate}
+            \item O sistema detecta um erro durante a exclusão do cartão (por exemplo, faturas pendentes).
+            \item O sistema informa ao usuário sobre o erro.
+        \end{enumerate}
+    \end{itemize}
 \end{addmargin}
 
 \subsection*{Pós-condições}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item As informações do cartão e faturas associadas são atualizadas conforme as ações do usuário.
-	\end{itemize}
+    \begin{itemize}
+        \item As informações do cartão e faturas associadas são atualizadas conforme as ações do usuário.
+    \end{itemize}
 \end{addmargin}
 
 \subsection*{Regras de Negócio}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item RN02: Cartões e contas com faturas ou transações associadas não podem ser excluídos.
-		\item RN07: Despesas em cartões de crédito devem ser associadas à fatura corrente.
-		\item RN15: Informações de cartões ou contas duplicadas não são permitidas.
-	\end{itemize}
+    \begin{itemize}
+        \item RN02: Cartões e contas com faturas ou transações associadas não podem ser excluídos.
+        \item RN07: Despesas em cartões de crédito devem ser associadas à fatura corrente.
+        \item RN15: Informações de cartões ou contas duplicadas não são permitidas.
+    \end{itemize}
 \end{addmargin}
 
 \subsection*{Notas e Comentários}
 \begin{addmargin}[1.5cm]{0cm}
-	\begin{itemize}
-		\item A interface de gerenciamento de cartões deve oferecer uma visão clara de todas as informações e operações disponíveis.
-	\end{itemize}
+    \begin{itemize}
+        \item A interface de gerenciamento de cartões deve oferecer uma visão clara de todas as informações e operações disponíveis.
+    \end{itemize}
 \end{addmargin}

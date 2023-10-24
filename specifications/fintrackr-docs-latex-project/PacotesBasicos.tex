@@ -41,6 +41,7 @@
 %\renewcommand{\theequation}{\arabic{equation}}
 
 %\numberwithin{equation}{section}
+\usepackage{scrextend}
 
 
 % Cabecalho cabeçalho somente com numeração de página 10pt
@@ -60,9 +61,9 @@
 
 % Configuração do pgfplots
 \pgfplotsset{compat=newest} %compat=1.14
-\pgfplotsset{plot coordinates/math parser=false}
-\newlength\figureheight
-\newlength\figurewidth
+\pgfplotsset{plot coordinates/math parser=false} 
+\newlength\figureheight 
+\newlength\figurewidth 
 
 % Libraries do TiKz
 \usetikzlibrary{quotes,angles,arrows}
@@ -118,11 +119,11 @@
 
 % Personalização das legendas
 \usepackage[format = plain, %hang
-	justification = centering,
-	labelsep = endash,
-	singlelinecheck = false,
-	skip = 6pt,
-	listformat = simple]{caption}
+			justification = centering,
+			labelsep = endash,
+			singlelinecheck = false,
+			skip = 6pt,
+			listformat = simple]{caption}	
 
 % Personalização das unidades
 \sisetup{output-decimal-marker = {,}}
@@ -150,11 +151,11 @@
 % Define os textos da citação
 \renewcommand*{\backrefalt}[4]{
 	\ifcase #1 %
-		Nenhuma citação no texto.%
+	Nenhuma citação no texto.%
 	\or
-		Citado na página #2.%
+	Citado na página #2.%
 	\else
-		Citado #1 vezes nas páginas #2.%
+	Citado #1 vezes nas páginas #2.%
 	\fi}%
 
 % alterando o aspecto da cor azul
@@ -164,11 +165,11 @@
 \makeatletter
 \hypersetup{
 	%pagebackref=true,
-	pdftitle={\@title},
+	pdftitle={\@title}, 
 	pdfauthor={\@author},
 	pdfsubject={\imprimirpreambulo},
 	pdfcreator={LaTeX with abnTeX2},
-	pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho academico},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho academico}, 
 	colorlinks=true,       		% false: boxed links; true: colored links
 	linkcolor=black,          	% color of internal links
 	citecolor=black,        	% color of links to bibliography
@@ -200,7 +201,7 @@
 % configurações para atender às regras da ABNT
 \setfloatadjustment{quadro}{\centering}
 \counterwithout{quadro}{chapter}
-\renewcommand{\cftquadroname}{\quadroname\space}
+\renewcommand{\cftquadroname}{\quadroname\space} 
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 
 \setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
@@ -306,16 +307,16 @@
 
 \let\oldcontentsline\contentsline
 \def\contentsline#1#2{%
-\expandafter\ifx\csname l@#1\endcsname\l@section
+	\expandafter\ifx\csname l@#1\endcsname\l@section
 	\expandafter\@firstoftwo
-\else
+	\else
 	\expandafter\@secondoftwo
-\fi
-{%
-\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
-}{%
-\oldcontentsline{#1}{#2}%
-}%
+	\fi
+	{%
+		\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+	}{%
+		\oldcontentsline{#1}{#2}%
+	}%
 }
 \makeatother
 
@@ -348,7 +349,7 @@
 	\begingroup
 	\@parboxrestore
 	\if@minipage
-		\@setminipage
+	\@setminipage
 	\fi
 	\ABNTEXfontereduzida
 	\configureseparator
@@ -382,9 +383,9 @@
 % Redefinição da Lista de abreviaturas e siglas [Personalizada para UDESC com espaçamento 1,5]
 \renewenvironment{siglas}{%
 	\pretextualchapter{\listadesiglasname}
-	\begin{symbols}
+	\begin{symbols} 
 		\setlength{\itemsep}{0pt}	% Ajuste para Espaçamento 1,5 (UDESC/CCT)
-		}{% 
+	}{% 
 	\end{symbols}
 	\cleardoublepage
 }
@@ -396,7 +397,7 @@
 	\pretextualchapter{\listadesimbolosname}
 	\begin{symbols}
 		\setlength{\itemsep}{0pt}	% Ajuste para Espaçamento 1,5 (UDESC/CCT)
-		}{%
+	}{%
 	\end{symbols}
 	\cleardoublepage
 }
