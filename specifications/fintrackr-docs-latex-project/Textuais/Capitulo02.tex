@@ -35,35 +35,37 @@ O projeto \textit{Fintrackr}, embora seja de pequeno porte, tem uma complexidade
 Os Casos de Uso oferecem uma representação clara das funções e interações do sistema, facilitando a comunicação entre desenvolvedores, stakeholders e usuários. Esta abordagem detalhada garante que todas as nuances e requisitos do \textit{Fintrackr} sejam capturados e desenvolvidos de forma eficaz. Ao adotar Casos de Uso, garantimos uma compreensão profunda das necessidades do usuário e uma implementação sistemática dessas necessidades.           
 
 \section{Ferramentas de ALM}
-            
+
 \begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|c|c|c|c|c|}
+		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
-			\multirow{2}{*}{\textbf{Critério}} & \multicolumn{4}{c|}{\textbf{Ferramenta}} \\ \cline{2-5} 
-			                                       & \textbf{Jira}             & \textbf{Trello}        & \textbf{Tuleap}         & \textbf{GitLab}           \\ \hline
+			\multirow{2}{*}{\textbf{Critério}} & \multicolumn{5}{c|}{\textbf{Ferramenta}} \\ \cline{2-6} 
+			                                   & \textbf{Jira}             & \textbf{Trello}        & \textbf{Tuleap}         & \textbf{GitLab}         & \textbf{Notion}           \\ \hline
 						                        
-			\multirow{2}{*}{\textbf{Quando Usar}}  & Projetos ágeis,          & Projetos simples,      & Desenvolvimento ágil,  & Desenvolvimento e         \\
-			                                       & de médio a grande porte. & visualização Kanban. & integração contínua. & integração contínua.   \\ 
-			                                       &                           &                        & projetos open source.   &                           \\ \hline
+			\multirow{2}{*}{\textbf{Quando Usar}}  & Projetos ágeis,          & Projetos simples,      & Desenvolvimento ágil,  & Desenvolvimento e     & Geração e controle de     \\
+			                                       & de médio a grande porte. & visualização Kanban. & integração contínua. & integração contínua. & tarefas, visões múltiplas. \\ 
+			                                       &                           &                        & projetos open source.   &                       & do mesmo datasource.      \\ \hline
 						                        
-			\multirow{4}{*}{\textbf{Benefícios}}  & Flexível, integrações  & Simples, intuitivo,    & Open source,            & Integração contínua,   \\
-			                                       & amplas, poderoso.         & flexível.             & personalizável.        & gestão de código.       \\
-			                                       &                           &                        &                         & gerenciamento de projeto. \\ 
-			                                       &                           &                        &                         &                           \\ \hline
+			\multirow{4}{*}{\textbf{Benefícios}}    & Flexível, integrações  & Simples, intuitivo,    & Open source,            & Integração contínua, & Facilidade na geração e    \\
+			                                       & amplas, poderoso.         & flexível.             & personalizável.        & gestão de código.     & controle de tarefas.       \\
+			                                       &                           &                        &                         & gerenciamento de projeto. &                           \\
+			                                       &                           &                        &                         &                       &                           \\ \hline
 						                        
-			\multirow{4}{*}{\textbf{Desvantagens}} & Curva de aprendizado      & Pode ser simplista     & Pode ser complexo       & Pode ser sobrecarregado   \\
-			                                       & íngreme, pode ser caro.  & para grandes projetos. & para novatos.           & para projetos menores.    \\
-			                                       &                           &                        &                         &                           \\ 
-			                                       &                           &                        &                         &                           \\ \hline
+			\multirow{4}{*}{\textbf{Desvantagens}} & Curva de aprendizado      & Pode ser simplista     & Pode ser complexo       & Pode ser sobrecarregado & -                         \\
+			                                       & íngreme, pode ser caro.  & para grandes projetos. & para novatos.           & para projetos menores. &                           \\
+			                                       &                           &                        &                         &                       &                           \\ 
+			                                       &                           &                        &                         &                       &                           \\ \hline
 		\end{tabular}%
 	}
-	\caption{Comparação entre Jira, Trello, Tuleap e GitLab}
+	\caption{Comparação entre Jira, Trello, Tuleap, GitLab e Notion}
 	\label{tab:tool_comparison}
 \end{table}          
-    
-Dada a natureza do projeto \textit{Fintrackr}, a seleção de ferramentas para gerenciamento e desenvolvimento é crucial. O Trello, com sua versão gratuita e simplicidade, surge como uma escolha primordial. Nossa equipe já possui familiaridade com o Trello, facilitando sua integração ao fluxo de trabalho. Além disso, adotamos um \href{https://github.com/ThiagoSchumann/fintrackr-docs}{repositório no GitHub} para centralizar documentação e artefatos, oferecendo uma visão unificada do projeto. Essa combinação de Trello e GitHub é ideal para as necessidades do \textit{Fintrackr}.
+        
+
+Dada a natureza do projeto \textit{Fintrackr}, a seleção de ferramentas para gerenciamento e desenvolvimento é crucial. Optamos pelo Notion devido à sua facilidade na geração e controle de tarefas, permitindo várias visões diferentes do mesmo datasource. Além disso, o Notion também nos permite criar documentações detalhadas para nossos projetos. Complementando nossa escolha, adotamos um \href{https://github.com/ThiagoSchumann/fintrackr-docs}{repositório no GitHub} para centralizar outros aspectos da documentação e artefatos, oferecendo uma visão unificada do projeto. Essa combinação de Notion e GitHub é ideal para as necessidades do \textit{Fintrackr}.
+
 
 \section{Planejamento do desenvolvimento}
             

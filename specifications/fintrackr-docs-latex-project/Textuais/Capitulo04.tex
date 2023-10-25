@@ -110,6 +110,8 @@ A seleção de uma ferramenta adequada para gerenciamento de dependências e con
 	\label{tab:technology_comparison}
 \end{table}
 
+\par Contudo, optamos em utilizar o Docker como ferramenta de build, por oferecer vantagens como a criação de ambientes de construção consistentes, isolados e portáteis. Isso garante a reprodutibilidade, a segurança e a facilidade de integração com CI/CD. A decisão de usar o Docker depende do contexto e dos requisitos do projeto.
+
 \section{Definição de Ferramentas e Estrutura de Execução para Deploy}
 
 A implantação eficaz do \textit{Fintrackr} é crucial para garantir uma experiência de usuário contínua e robusta. Para alcançar essa eficiência, adotamos um conjunto de ferramentas líderes de mercado e definimos uma estrutura de execução que prioriza a escalabilidade, consistência e facilidade de manutenção.
@@ -128,7 +130,17 @@ A implantação eficaz do \textit{Fintrackr} é crucial para garantir uma experi
 
 \begin{itemize}
 	\item \textbf{Docker}: A contêinerização é fundamental na era moderna da computação em nuvem. O Docker nos permite encapsular nossa aplicação e todas as suas dependências em contêineres, garantindo uma execução consistente em todos os ambientes, desde o desenvolvimento até a produção.
+    \par Será utilizada a estrutura padrão do Docker, seguindo os seguintes passos:
 \end{itemize}
+\begin{enumerate}
+  \item Instalação o Docker no sistema operacional.
+  \item Inserido uma imagem.
+  \item Contruir uma Imagem (Opcional): Pode ser criada imagem personalizada com um Dockerfile, se necessário.
+  \item Usar o comando \texttt{docker build} para criar a imagem.
+  \item Usar o comando \texttt{docker run} para iniciar um contêiner com base na imagem criada.
+\end{enumerate}
+
+
 \section{GitFlow}
 O \textit{GitFlow} é uma estratégia de fluxo de trabalho do Git que define uma estrutura robusta para projetos, facilitando o desenvolvimento paralelo, a colaboração em equipe e o lançamento de versões estáveis. A estratégia é composta por várias \textit{branches} que têm propósitos específicos. A seguir, detalhamos essas \textit{branches} e suas interações:
 
@@ -214,4 +226,7 @@ O GitFlow, com sua estrutura clara e regras definidas, ajuda as equipes a gerenc
 \par Em nosso projeto, usaremos o SonarQube com o Docker, pois como vimos em sala é muito prático levantá-lo junto ao Docker, Ainda é muito  vantajoso porque permite analisar e melhorar a qualidade do código fonte, identificar vulnerabilidades de segurança, detectar bugs e defeitos, manter padrões de codificação consistentes, integrar análises de código ao pipeline de desenvolvimento, fornecer feedback imediato aos desenvolvedores, rastrear o histórico das análises, personalizar a configuração, gerar relatórios detalhados e, em última análise, aprimorar a qualidade do software. Isso contribui para a segurança, confiabilidade e desempenho de aplicativos em containers Docker.
 
 \section{Documentação}
+
+A documentação é um aspecto crucial de qualquer projeto, e no \textit{Fintrackr} não é diferente. Para além das especificações e detalhes técnicos da API, que utilizaremos o Swagger, o Notion desempenhará um papel fundamental como uma plataforma de documentação complementar. No Notion, criaremos uma página dedicada para manter informações pertinentes do projeto, incluindo eventuais documentações que auxiliem no desenvolvimento. Esta abordagem centralizada no Notion garantirá que toda a equipe tenha acesso fácil e rápido a informações críticas, melhorando a eficiência e a colaboração.
+
 O Swagger é uma poderosa ferramenta para a construção de APIs RESTful, proporcionando uma suite completa para desenho, construção, documentação e uso de APIs. Ele fornece um conjunto de recursos que auxiliam os desenvolvedores a criar APIs consistentes, testáveis e padronizadas. Um dos componentes mais valiosos do Swagger é o Swagger UI, que fornece uma interface visual para interagir com a API, permitindo que os desenvolvedores e os usuários finais visualizem e testem as funcionalidades da API de forma intuitiva. No contexto do \textit{FinTrackr}, o Swagger será inestimável para documentar e testar as várias endpoints da API. Isso não só facilitará a integração entre o front-end e o back-end, mas também fornecerá uma referência clara para os desenvolvedores e partes interessadas sobre como a API funciona, quais dados ela aceita e quais respostas podem ser esperadas. Ao adotar o Swagger no \textit{FinTrackr}, garantimos uma abordagem padronizada e eficiente para a construção e documentação da API.
