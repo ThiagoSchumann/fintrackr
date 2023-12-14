@@ -8,19 +8,19 @@
 		\begin{tabular}{|c|c|c|c|}
 			\hline
 			\multirow{2}{*}{\textbf{Plataforma}} & \multicolumn{3}{c|}{\textbf{Comparação}}                                                                          \\ \cline{2-4}
-			  & \textbf{GitHub}                  & \textbf{GitLab}               & \textbf{Bitbucket}                         \\ \hline
-			
+			                                     & \textbf{GitHub}                          & \textbf{GitLab}             & \textbf{Bitbucket}                       \\ \hline
+
 			\multirow{2}{*}{\textbf{Benefícios}}
-			  & Comunidade ampla,                & CI/CD integrado,              & Integração Atlassian,                    \\
-			  & Marketplace extenso.             & Privacidade gratuita.         & Repositórios privados gratuitos.          \\ \hline
-			
+			                                     & Comunidade ampla,                        & CI/CD integrado,            & Integração Atlassian,                    \\
+			                                     & Marketplace extenso.                     & Privacidade gratuita.       & Repositórios privados gratuitos.         \\ \hline
+
 			\multirow{2}{*}{\textbf{Desvantagens}}
-			  & Preço por repositório privado, & Interface menos intuitiva,    & Limitações em repositórios gratuitos,   \\
-			  & Limitações de armazenamento.   & Recursos de hardware.         & Menos recursos de CI/CD.                   \\ \hline
-			
+			                                     & Preço por repositório privado,           & Interface menos intuitiva,  & Limitações em repositórios gratuitos,    \\
+			                                     & Limitações de armazenamento.             & Recursos de hardware.       & Menos recursos de CI/CD.                 \\ \hline
+
 			\multirow{2}{*}{\textbf{Uso Comum}}
-			  & Projetos open-source,            & Solução completa de DevOps, & Equipes usando Atlassian.                  \\
-			  & Colaboração em larga escala.   & Controle total sobre CI/CD.   & Integração de gerenciamento de projetos. \\ \hline
+			                                     & Projetos open-source,                    & Solução completa de DevOps, & Equipes usando Atlassian.                \\
+			                                     & Colaboração em larga escala.             & Controle total sobre CI/CD. & Integração de gerenciamento de projetos. \\ \hline
 		\end{tabular}%
 	}
 	\caption{Comparação entre GitHub, GitLab e Bitbucket}
@@ -36,16 +36,16 @@
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			\multirow{2}{*}{\textbf{Critério}} & \multicolumn{4}{c|}{\textbf{Servidor de CI/CD}}                                                                                     \\ \cline{2-5}
-			                      & \textbf{Jenkins}               & \textbf{TravisCI}         & \textbf{CircleCI}         & \textbf{AWS CodePipeline}     \\ \hline
-			
-			\textbf{Quando Usar}  & Projetos grandes com           & Projetos open-source      & Projetos pequenos         & Projetos na AWS               \\
-			                      & necessidade de customização. & com diferentes ambientes. & com integração rápida. & com serviços AWS integrados. \\ \hline
-			
-			\textbf{Benefícios}  & Alta customização,           & Integração rápida,     & Integração rápida,     & Integração com              \\
-			                      & pipelines codificáveis.       & fácil configuração.    & fácil configuração.    & serviços AWS.                \\ \hline
-			
-			\textbf{Desvantagens} & Complexo e demorado            & Ideal para projetos       & Pode ser limitado para    & Menos flexível com           \\
-			                      & para configurar.               & menores.                  & projetos grandes.         & integrações de terceiros.   \\ \hline
+			                                   & \textbf{Jenkins}                                & \textbf{TravisCI}         & \textbf{CircleCI}      & \textbf{AWS CodePipeline}    \\ \hline
+
+			\textbf{Quando Usar}               & Projetos grandes com                            & Projetos open-source      & Projetos pequenos      & Projetos na AWS              \\
+			                                   & necessidade de customização.                    & com diferentes ambientes. & com integração rápida. & com serviços AWS integrados. \\ \hline
+
+			\textbf{Benefícios}                & Alta customização,                              & Integração rápida,        & Integração rápida,     & Integração com               \\
+			                                   & pipelines codificáveis.                         & fácil configuração.       & fácil configuração.    & serviços AWS.                \\ \hline
+
+			\textbf{Desvantagens}              & Complexo e demorado                             & Ideal para projetos       & Pode ser limitado para & Menos flexível com           \\
+			                                   & para configurar.                                & menores.                  & projetos grandes.      & integrações de terceiros.    \\ \hline
 		\end{tabular}%
 	}
 	\caption{Comparação entre Servidores de CI/CD}
@@ -60,29 +60,29 @@ Neste projeto, empregamos uma combinação de linguagens de programação, frame
 
 \subsection{Front-end}
 \begin{itemize}
-    \item \textbf{Linguagem}: JavaScript - Uma linguagem de programação amplamente adotada para desenvolvimento web.
-    \item \textbf{Framework}: React.js - Um popular framework JavaScript para construir interfaces de usuário interativas.
-    \item \textbf{Estilo}: Bootstrap - Um framework CSS para desenvolver sites responsivos e projetos web móveis de primeira classe.
+	\item \textbf{Linguagem}: JavaScript - Uma linguagem de programação amplamente adotada para desenvolvimento web.
+	\item \textbf{Framework}: React.js - Um popular framework JavaScript para construir interfaces de usuário interativas.
+	\item \textbf{Estilo}: Bootstrap - Um framework CSS para desenvolver sites responsivos e projetos web móveis de primeira classe.
 \end{itemize}
 
 \subsection{Back-end Principal}
 \begin{itemize}
-    \item \textbf{Linguagem}: Python - Conhecida por sua legibilidade e eficiência.
-    \item \textbf{Framework}: Flask - Um microframework web para Python.
-    \item \textbf{Autenticação}: Flask-JWT-Extended - Uma extensão do Flask para lidar com a autenticação JWT (JSON Web Token).
+	\item \textbf{Linguagem}: Python - Conhecida por sua legibilidade e eficiência.
+	\item \textbf{Framework}: Flask - Um microframework web para Python.
+	\item \textbf{Autenticação}: Flask-JWT-Extended - Uma extensão do Flask para lidar com a autenticação JWT (JSON Web Token).
 \end{itemize}
 
 \subsection{Microserviço de Processamento de Faturas}
 \begin{itemize}
-    \item \textbf{Linguagem}: Python.
-    \item \textbf{Biblioteca de Análise de Dados}: Pandas - Usada para manipulação e análise eficiente dos dados das faturas.
-    \item \textbf{Mensageria}: RabbitMQ - Facilita a comunicação assíncrona entre o microserviço e o back-end monolítico.
+	\item \textbf{Linguagem}: Python.
+	\item \textbf{Biblioteca de Análise de Dados}: Pandas - Usada para manipulação e análise eficiente dos dados das faturas.
+	\item \textbf{Mensageria}: RabbitMQ - Facilita a comunicação assíncrona entre o microserviço e o back-end monolítico.
 \end{itemize}
 
 
 \subsection{Banco de Dados}
 \begin{itemize}
-    \item \textbf{SGBD}: PostgreSQL - Um sistema de gerenciamento de banco de dados relacional poderoso e de código aberto.
+	\item \textbf{SGBD}: PostgreSQL - Um sistema de gerenciamento de banco de dados relacional poderoso e de código aberto.
 \end{itemize}
 
 \section{Ferramentas de Build}
@@ -94,16 +94,16 @@ A seleção de uma ferramenta adequada para gerenciamento de dependências e con
 		\begin{tabular}{|c|c|c|c|}
 			\hline
 			\multirow{2}{*}{\textbf{Critério}} & \multicolumn{3}{c|}{\textbf{Tecnologia}}                                                                       \\ \cline{2-4}
-			                      & \textbf{Maven}        & \textbf{Gradle}         & \textbf{Docker}                                \\ \hline
-			
-			\textbf{Quando Usar}  & Projetos com          & Projetos que necessitam & Quando a criação e                           \\
-			                      & estruturação clara. & de flexibilidade.       & distribuição de contêineres é necessária. \\ \hline
-			
-			\textbf{Benefícios}  & Simplicidade,         & Flexibilidade,          & Portabilidade,                                 \\
-			                      & reprodutibilidade.    & desempenho.             & isolamento.                                    \\ \hline
-			
-			\textbf{Desvantagens} & Menos flexível,      & Curva de aprendizado    & Requer conhecimento                            \\
-			                      & pode ser lento.       & inicial.                & em contêineres.                               \\ \hline
+			                                   & \textbf{Maven}                           & \textbf{Gradle}         & \textbf{Docker}                           \\ \hline
+
+			\textbf{Quando Usar}               & Projetos com                             & Projetos que necessitam & Quando a criação e                        \\
+			                                   & estruturação clara.                      & de flexibilidade.       & distribuição de contêineres é necessária. \\ \hline
+
+			\textbf{Benefícios}                & Simplicidade,                            & Flexibilidade,          & Portabilidade,                            \\
+			                                   & reprodutibilidade.                       & desempenho.             & isolamento.                               \\ \hline
+
+			\textbf{Desvantagens}              & Menos flexível,                          & Curva de aprendizado    & Requer conhecimento                       \\
+			                                   & pode ser lento.                          & inicial.                & em contêineres.                           \\ \hline
 		\end{tabular}%
 	}
 	\caption{Comparação entre Maven, Gradle e Docker}
@@ -118,39 +118,50 @@ A implantação eficaz do \textit{Fintrackr} é crucial para garantir uma experi
 
 \section{Ferramentas para Deploy}
 
+A correta implantação do \textit{FinTrackr} é vital para garantir uma experiência de usuário suave e robusta. Para este fim, optamos por um conjunto de ferramentas líderes de mercado e estabelecemos uma estrutura de execução que prioriza a escalabilidade, consistência e facilidade de manutenção.
+
 \begin{itemize}
-	\item \textbf{Ansible}: Uma ferramenta de automação poderosa que usamos para o provisionamento e configuração. Com sua ampla gama de módulos, o Ansible não apenas configura nodes do Kubernetes e instala o Docker, mas também se integra perfeitamente com outros sistemas e ferramentas, garantindo uma implantação homogênea e sem problemas.
-	      
-	\item \textbf{GitHub}: Escolhido para controle de versões, o GitHub nos permite colaborar eficientemente e manter um histórico detalhado de todas as mudanças no código, facilitando o rastreamento e a reversão, se necessário.
-	      
-	\item \textbf{Jenkins}: Para a integração contínua e entrega contínua (CI/CD), adotamos o Jenkins devido à sua flexibilidade, ampla comunidade e capacidade de se integrar com uma variedade de outras ferramentas, incluindo o Ansible e o Kubernetes.
+	\item \textbf{GitHub}: Nossa escolha para controle de versões, o GitHub, permite uma colaboração eficaz e mantém um registro detalhado de todas as alterações no código, tornando o rastreamento e a reversão, quando necessário, um processo simplificado.
+	\item \textbf{Jenkins}: Para a integração contínua e entrega contínua (CI/CD), optamos pelo Jenkins devido à sua flexibilidade, ampla comunidade de suporte e capacidade de integração com uma variedade de outras ferramentas, incluindo o Ansible e o Kubernetes.
 \end{itemize}
 
 \section{Estrutura de Execução}
 
-\begin{itemize}
-	\item \textbf{Docker}: A contêinerização é fundamental na era moderna da computação em nuvem. O Docker nos permite encapsular nossa aplicação e todas as suas dependências em contêineres, garantindo uma execução consistente em todos os ambientes, desde o desenvolvimento até a produção.
-    \par Será utilizada a estrutura padrão do Docker, seguindo os seguintes passos:
-\end{itemize}
-\begin{enumerate}
-  \item Instalação o Docker no sistema operacional.
-  \item Inserido uma imagem.
-  \item Contruir uma Imagem (Opcional): Pode ser criada imagem personalizada com um Dockerfile, se necessário.
-  \item Usar o comando \texttt{docker build} para criar a imagem.
-  \item Usar o comando \texttt{docker run} para iniciar um contêiner com base na imagem criada.
-\end{enumerate}
+A natureza modular e escalável do \textit{FinTrackr} se alinha perfeitamente com as capacidades fornecidas pelo Docker, uma plataforma de contêineres que permite empacotar, distribuir e executar aplicações de forma consistente e isolada. A utilização do Docker não apenas facilita o processo de desenvolvimento, mas também otimiza a operação e a distribuição da aplicação.
 
+\subsection{Contêinerização e Isolamento}
+
+O Docker proporciona um ambiente controlado e consistente para executar o \textit{FinTrackr}, isolando suas dependências e serviços associados em contêineres. Essa contêinerização assegura que o aplicativo se comportará da mesma maneira, independentemente de onde seja implantado, mitigando assim os problemas comuns de "funciona na minha máquina". Além disso, a isolamento fornecido pelos contêineres do Docker protege o \textit{FinTrackr} de possíveis interferências de outras aplicações ou serviços no mesmo ambiente.
+
+\subsection{Desenvolvimento e Testes}
+
+Durante as fases de desenvolvimento e testes, os desenvolvedores podem tirar proveito da facilidade de inicialização e descarte de contêineres Docker. Isso permite que eles configurem, testem e reconfigurem o ambiente do \textit{FinTrackr} de maneira rápida e sem esforço, acelerando o ciclo de desenvolvimento e garantindo que os testes sejam executados em um ambiente controlado e previsível.
+
+\subsection{Integração e Entrega Contínua}
+
+A integração do Docker com ferramentas de Integração Contínua/Entrega Contínua (CI/CD) adotado, o Jenkins, facilita a automação do pipeline de desenvolvimento do \textit{FinTrackr}. Os contêineres Docker podem ser construídos, testados e implantados automaticamente através de pipelines CI/CD, garantindo que cada alteração no código seja verificada e entregue de maneira eficaz e eficiente.
+
+\subsection{Execução}
+
+Para executar o \textit{FinTrackr} utilizando Docker, seguiremos uma estrutura padronizada:
+
+\begin{enumerate}
+	\item \textbf{Instalação do Docker}: O Docker será instalado no ambiente de execução desejado, seja um servidor local, um ambiente de nuvem ou uma máquina de desenvolvimento.
+	\item \textbf{Criação de Imagens}: Imagens Docker serão criadas para cada componente do \textit{FinTrackr}, incluindo o back-end, front-end e o microserviço de processamento de faturas. Cada imagem será construída usando um Dockerfile que define as dependências, variáveis de ambiente e comandos necessários para executar o componente.
+	\item \textbf{Construção de Imagens}: Usaremos o comando \textit{docker build} para construir as imagens a partir dos Dockerfiles.
+	\item \textbf{Execução de Contêineres}: Os contêineres serão iniciados usando o comando \textit{docker run}, configurando as redes, volumes e outras opções necessárias para conectar os contêineres entre si e com os recursos externos necessários.
+\end{enumerate}
 
 \section{GitFlow}
 O \textit{GitFlow} é uma estratégia de fluxo de trabalho do Git que define uma estrutura robusta para projetos, facilitando o desenvolvimento paralelo, a colaboração em equipe e o lançamento de versões estáveis. A estratégia é composta por várias \textit{branches} que têm propósitos específicos. A seguir, detalhamos essas \textit{branches} e suas interações:
 
 \begin{itemize}
 	\item \textbf{main}: Contém o código considerado como produção. Cada \textit{commit} nesta branch é uma nova versão de produção.
-	      
+
 	\item \textbf{develop}: Atua como uma branch de integração para novos recursos e é o principal local de desenvolvimento contínuo.
-	      
+
 	\item \textbf{feature branches}: Criadas a partir da branch \textit{develop}. São utilizadas para desenvolver novas funcionalidades sem afetar o código principal. Quando uma funcionalidade é concluída, um \textit{Pull Request} (PR) é criado para mesclar a \textit{feature branch} de volta à branch \textit{develop}.
-	      
+
 	\item \textbf{hotfix branches}: Surgem a partir da branch \textit{main}. Destinadas para correções rápidas diretamente no código de produção. Quando uma correção é finalizada, PRs são abertos para integrar a \textit{hotfix branch} tanto na branch \textit{main} quanto na \textit{develop}.
 \end{itemize}
 
@@ -160,25 +171,29 @@ O GitFlow, com sua estrutura clara e regras definidas, ajuda as equipes a gerenc
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\linewidth]{Textuais/gitflow.png}
+	\includegraphics[width=1\linewidth]{Textuais/images/gitflow.png}
 	\caption{\textit{GitFlow}}
 	\label{fig:enter-label}
 \end{figure}
 
 \section{Testes}
+
 \subsection{Ferramentas de Testes}
+Para a linguagem Python será utilizado o Pytest, conhecido por sua sintaxe simples, identificação automática de testes, uso de fixtures, suporte a parametrização, extensibilidade por meio de plugins, e facilidade de integração com outras ferramentas de desenvolvimento. É amplamente adotado em projetos de código aberto e empresas, tornando o processo de teste eficiente e agradável para os desenvolvedores.
 
-\par Para a linguagem Python será utilizado o Pytest, conhecido por sua sintaxe simples, identificação automática de testes, uso de fixtures, suporte a parametrização, extensibilidade por meio de plugins, e facilidade de integração com outras ferramentas de desenvolvimento. É amplamente adotado em projetos de código aberto e empresas, tornando o processo de teste eficiente e agradável para os desenvolvedores.
-
-\par Para a linguagem React, será utilizado o Jest, ele é um framework de teste desenvolvido pelo Facebook que é amplamente usado na comunidade React. Ele é projetado para testar JavaScript, incluindo código React. O Jest é conhecido por sua simplicidade e integração perfeita com o React. Ele suporta testes de componentes, testes de unidades e testes de integração.
+Para o React, será utilizado o Jest, ele é um framework de teste desenvolvido pelo Facebook que é amplamente usado na comunidade React. Ele é projetado para testar JavaScript, incluindo código React. O Jest é conhecido por sua simplicidade e integração perfeita com o React. Ele suporta testes de componentes, testes de unidades e testes de integração.
 
 \subsection{Metrica de Cobertura de Testes}
-\par A meta do nosso projeto é atingir uma cobertura de testes de 60\%. A cobertura de testes é fundamental para garantir a qualidade e a confiabilidade do nosso software. Com uma cobertura adequada, podemos identificar e corrigir erros de maneira eficaz, melhorar a manutenção do código e aumentar a confiança na estabilidade do sistema.
-\par Para alcançar essa meta, planejamos implementar uma estratégia abrangente de testes que serão executados regularmente em um ambiente de integração contínua para garantir que nossa cobertura de testes seja mantida ao longo do tempo.
-\par Atingir 60\% de cobertura de testes é um processo contínuo, e planejamos monitorar nosso progresso ao longo do ciclo de vida do projeto. Estabelecemos marcos específicos para avaliar nosso avanço e faremos ajustes conforme necessário para atender a essa meta.
-\par Acreditamos que essa abordagem nos permitirá entregar um software de alta qualidade, com menos bugs e maior confiabilidade, beneficiando nossos usuários finais e nossa equipe de desenvolvimento
+A meta do nosso projeto é atingir uma cobertura de testes de 60\%. A cobertura de testes é fundamental para garantir a qualidade e a confiabilidade do nosso software. Com uma cobertura adequada, podemos identificar e corrigir erros de maneira eficaz, melhorar a manutenção do código e aumentar a confiança na estabilidade do sistema.
 
-\section{Artefact Management}
+Para alcançar essa meta, planejamos implementar uma estratégia abrangente de testes que serão executados regularmente em um ambiente de integração contínua para garantir que nossa cobertura de testes seja mantida ao longo do tempo.
+
+Atingir 60\% de cobertura de testes é um processo contínuo, e planejamos monitorar nosso progresso ao longo do ciclo de vida do projeto. Estabelecemos marcos específicos para avaliar nosso avanço e faremos ajustes conforme necessário para atender a essa meta.
+
+Acreditamos que essa abordagem nos permitirá entregar um software de alta qualidade, com menos bugs e maior confiabilidade, beneficiando nossos usuários finais e nossa equipe de desenvolvimento.
+
+
+\section{Artifacts Management}
 
 \begin{table}[ht]
 	\centering
@@ -186,35 +201,35 @@ O GitFlow, com sua estrutura clara e regras definidas, ajuda as equipes a gerenc
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			\multirow{2}{*}{\textbf{Tecnologia}} & \multicolumn{4}{c|}{\textbf{Aspectos}}                                                                       \\ \cline{2-5}
-			  & \textbf{Benefícios} & \textbf{Desvantagens} & \textbf{Uso Comum} & \textbf{Indicado Para} \\ \hline
-			
+			                                     & \textbf{Benefícios}                    & \textbf{Desvantagens} & \textbf{Uso Comum} & \textbf{Indicado Para} \\ \hline
+
 			\textbf{Nexus}                       &
 			- Gerenciamento de dependências.
-			&
+			                                     &
 			- Requer configuração.
-			&
+			                                     &
 			- Armazenamento de artefatos.
-			&
+			                                     &
 			- Projetos grandes.
 			\\ \hline
-			
+
 			\textbf{DockerHub}                   &
 			- Hospedagem de imagens Docker.
-			&
+			                                     &
 			- Limitações em repositórios públicos.
-			&
+			                                     &
 			- Distribuição de contêineres.
-			&
+			                                     &
 			- Projetos com Docker.
 			\\ \hline
-			
+
 			\textbf{Sonar}                       &
 			- Análise contínua da qualidade.
-			&
+			                                     &
 			- Configuração inicial.
-			&
+			                                     &
 			- Melhoria da qualidade do código.
-			&
+			                                     &
 			- Projetos com foco em qualidade.
 			\\ \hline
 		\end{tabular}%
