@@ -1,27 +1,12 @@
 @startuml
-
-interface PaymentBehavior {
-    +processPayment(): void
-}
-
-class RegularPayment implements PaymentBehavior {
-    +processPayment(): void
-}
-
-class NoPayment implements PaymentBehavior {
-    +processPayment(): void
-}
-
 class User {
     +id: int
     +username: String
     +password: String
     +email: String
-    -register(): void
-    -login(): void
 }
 
-abstract class Transaction {
+class Transaction {
     +id: int
     +amount: float
     +description: String
@@ -30,16 +15,6 @@ abstract class Transaction {
     +categories: Category[]
     +account: Account
     +monthReference: Date
-    -addCategory(category: Category): void
-    -removeCategory(category: Category): void
-    #paymentBehavior: PaymentBehavior
-    +setPaymentBehavior(pb: PaymentBehavior): void
-}
-
-class RegularTransaction extends Transaction {
-}
-
-class CreditCardTransaction extends Transaction {
 }
 
 enum TransactionType {
@@ -57,8 +32,6 @@ class CreditCard {
     +name: String
     +limit: float
     +invoices: Invoice[]
-    -addInvoice(invoice: Invoice): void
-    -removeInvoice(invoice: Invoice): void
 }
 
 class Invoice {
@@ -66,8 +39,6 @@ class Invoice {
     +amount: float
     +dueDate: Date
     +transactions: CreditCardTransaction[]
-    -addTransaction(transaction: CreditCardTransaction): void
-    -removeTransaction(transaction: CreditCardTransaction): void
 }
 
 class Budget {
@@ -87,9 +58,8 @@ class Account {
     +id: int
     +name: String
     +balance: float
+    +balanceSaved: float // Campo adicionado aqui
     +bank: Bank
-    -debit(amount: float): void
-    -credit(amount: float): void
 }
 
 class Bank {
@@ -97,12 +67,12 @@ class Bank {
     +name: String
 }
 
-class BalanceHistory {
+class CashFlow {
     +id: int
-    +date: Date
     +amount: float
-    +description: String
-    +transaction: Transaction
+    +date: Date
+    +source: String // Pode ser "Invoice" ou "Transaction"
+    +account: Account
 }
 
 User "1" -- "0..*" Transaction
@@ -110,15 +80,13 @@ Transaction "0..*" -- "0..*" Category
 Transaction "1" -- "1" Account
 User "1" -- "0..*" CreditCard
 CreditCard "1" -- "0..*" Invoice
-Invoice "1" -- "0..*" CreditCardTransaction
+Invoice "1" -- "0..*" Transaction
 User "1" -- "0..*" Budget
 Budget "1" -- "0..*" BudgetDetail
 User "1" -- "0..*" Account
 Account "1" -- "1" Bank
-Transaction "1" -- "0..*" BalanceHistory
 
-Transaction <|-- RegularTransaction
-Transaction <|-- CreditCardTransaction
-Transaction -- PaymentBehavior
-
+Invoice "0..*" -- "0..*" CashFlow : generates >
+Transaction "0..*" -- "0..*" CashFlow : generates >
+Account "1" -- "0..*" CashFlow : receives >
 @enduml
